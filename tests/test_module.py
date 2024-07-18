@@ -39,6 +39,7 @@ class ModuleA3(minitorch.Module):
 class ModuleA4(minitorch.Module):
     def __init__(self) -> None:
         super().__init__()
+        # get p3,15 which is stored in c in moduleA3
         self.p3 = minitorch.Parameter(15)
 
 
@@ -182,3 +183,7 @@ def test_parameter() -> None:
     t2 = MockParam()
     q.update(t2)
     assert t2.x
+
+
+if __name__ == "__main__":
+    test_stacked_demo()

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Any, Iterable, List, Tuple
-
+import copy
 from typing_extensions import Protocol
 
 # ## Task 1.1
@@ -22,9 +22,15 @@ def central_difference(f: Any, *vals: Any, arg: int = 0, epsilon: float = 1e-6) 
     Returns:
         An approximation of $f'_i(x_0, \ldots, x_{n-1})$
     """
-    # TODO: Implement for Task 1.1.
-    raise NotImplementedError("Need to implement for Task 1.1")
-
+    # # TODO: Implement for Task 1.1.
+    # raise NotImplementedError("Need to implement for Task 1.1")
+    # Finite difference is often used as an approximation of the derivative
+    new_vals1=copy.copy(vals)
+    new_vals1[arg]=new_vals1[arg]+epsilon/2
+    new_vals2=vals
+    new_vals2[arg]=vals[arg]-epsilon/2
+    return (f(*new_vals1)-f(*new_vals2))/epsilon
+    
 
 variable_count = 1
 

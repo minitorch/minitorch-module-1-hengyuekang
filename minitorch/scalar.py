@@ -92,15 +92,17 @@ class Scalar:
         return Mul.apply(b, Inv.apply(self))
 
     def __add__(self, b: ScalarLike) -> Scalar:
-        # TODO: Implement for Task 1.2.
-        raise NotImplementedError("Need to implement for Task 1.2")
+        # # TODO: Implement for Task 1.2.
+        # raise NotImplementedError("Need to implement for Task 1.2")
+        return Add.apply(self, b)
 
     def __bool__(self) -> bool:
         return bool(self.data)
 
     def __lt__(self, b: ScalarLike) -> Scalar:
-        # TODO: Implement for Task 1.2.
-        raise NotImplementedError("Need to implement for Task 1.2")
+        # # TODO: Implement for Task 1.2.
+        # raise NotImplementedError("Need to implement for Task 1.2")
+        return LT.apply(self, b)
 
     def __gt__(self, b: ScalarLike) -> Scalar:
         # TODO: Implement for Task 1.2.

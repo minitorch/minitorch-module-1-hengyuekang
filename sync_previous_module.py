@@ -22,6 +22,7 @@ if len(sys.argv) != 3:
 
 # Get the users path to evaluate the username and root directory
 current_path = os.getcwd()
+# "-1" not include the last element
 grandparent_path = "/".join(current_path.split("/")[:-1])
 
 print("Looking for modules in : ", grandparent_path)
